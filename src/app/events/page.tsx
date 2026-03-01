@@ -1,6 +1,8 @@
 "use client"
 
+import * as React from "react"
 import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 const galleryImages = [
   { id: 1, title: "Tech Symposium 2023", category: "Conference" },
@@ -12,9 +14,11 @@ const galleryImages = [
 ]
 
 export default function Events() {
+  const [activeId, setActiveId] = React.useState<number | null>(null);
+
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16 space-y-4"
@@ -33,19 +37,26 @@ export default function Events() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
+            onClick={() => setActiveId(activeId === img.id ? null : img.id)}
             className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted flex items-center justify-center cursor-pointer border border-border"
           >
             {/* Visual Placeholder for an image */}
             <div className="text-muted-foreground/30 font-bold text-5xl opacity-0">Img {img.id}</div>
-            
+
             {/* Hover overlay */}
-            <div className="absolute inset-0 bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <div className={cn(
+              "absolute inset-0 bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6",
+              activeId === img.id && "opacity-100"
+            )}>
               <span className="text-sm font-semibold text-primary mb-1">{img.category}</span>
               <h3 className="text-xl font-bold text-foreground">{img.title}</h3>
             </div>
-            
+
             {/* Gradient for depth even without hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-20 group-hover:opacity-0 transition-opacity" />
+            <div className={cn(
+              "absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-20 group-hover:opacity-0 transition-opacity",
+              activeId === img.id && "opacity-0"
+            )} />
           </motion.div>
         ))}
       </div>
