@@ -7,9 +7,9 @@ export default function Contact() {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
+
         {/* Contact Information & Map */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="space-y-12"
@@ -26,13 +26,13 @@ export default function Contact() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                 <MapPin size={24} />
               </div>
-              <p>Birla Vishvakarma Mahavidyalaya<br/>Engineering College, Vallabh Vidyanagar</p>
+              <p>Birla Vishvakarma Mahavidyalaya<br />Engineering College, Vallabh Vidyanagar</p>
             </div>
             <div className="flex items-center gap-4 text-muted-foreground">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                 <Mail size={24} />
               </div>
-              <p>ieee@bvmengineering.ac.in</p>
+              <p>cs.chapter@bvmengineering.ac.in</p>
             </div>
             <div className="flex items-center gap-4 text-muted-foreground">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
@@ -49,7 +49,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           className="bg-card rounded-3xl p-8 border border-border shadow-sm h-fit"
@@ -57,7 +57,7 @@ export default function Contact() {
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium">Full Name</label>
-              <input 
+              <input
                 id="name"
                 className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none"
                 placeholder="John Doe"
@@ -65,7 +65,7 @@ export default function Contact() {
             </div>
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">Email Address</label>
-              <input 
+              <input
                 id="email"
                 type="email"
                 className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none"
@@ -74,7 +74,7 @@ export default function Contact() {
             </div>
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">Message</label>
-              <textarea 
+              <textarea
                 id="message"
                 rows={5}
                 className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none resize-none"
