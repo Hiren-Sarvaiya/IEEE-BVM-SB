@@ -192,7 +192,7 @@ function HorizontalCommitteeSection({ teamSection, sectionIndex }: { teamSection
                 <TeamCard key={member.name} member={member} index={index} />
               ))}
               {/* End Spacer */}
-              <div className="shrink-0 w-0 sm:w-4 h-10" />
+              <div className="shrink-0 w-2 sm:w-4 h-10" />
             </div>
           </div>
         </div>
