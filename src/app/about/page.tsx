@@ -14,7 +14,7 @@ export default function About() {
       >
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Our Story</h1>
         <p className="text-xl text-muted-foreground leading-relaxed">
-          The IEEE Computer Society at Birla Vishvakarma Mahavidyalaya (BVM) is a vibrant community of tech enthusiasts dedicated to advancing computer science.
+          The IEEE CS BVM SBC at Birla Vishvakarma Mahavidyalaya (BVM) is a vibrant community of tech enthusiasts dedicated to advancing computer science.
         </p>
       </motion.section>
 

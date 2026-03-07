@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl tracking-tight text-primary">IEEE Computer Society</span>
+            <span className="font-bold text-xl tracking-tight text-primary">IEEE CS BVM SBC</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

@@ -208,7 +208,7 @@ export default function Teams() {
       >
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Meet the Teams</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          The brilliant minds at IEEE Computer Society BVM driving innovation.
+          The brilliant minds at IEEE CS BVM SBC BVM driving innovation.
         </p>
       </motion.div>
 

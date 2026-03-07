@@ -41,15 +41,15 @@ export default function Home() {
               <span>Advancing Technology</span>
             </motion.div>
 
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto">
-              IEEE Computer Society <br />
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
+              IEEE CS BVM SBC <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
                 BVM Chapter
               </span>
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The community for computer science and engineering professionals. Join us in shaping the future of technology at Birla Vishvakarma Mahavidyalaya.
+              The community of CS, IT & engineering professionals. Join us in shaping the future of technology at Birla Vishvakarma Mahavidyalaya.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Technical Excellence</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The IEEE Computer Society at BVM is dedicated to advancing the theory and practice of computer and information processing technology. We provide a platform for students to enhance their technical skills through workshops, hackathons, and global networking.
+              IEEE CS BVM SBC at BVM is dedicated to advancing the theory and practice of computer and information processing technology. We provide a platform for students to enhance their technical skills through workshops, hackathons, and global networking.
             </p>
             <div className="flex gap-4 pt-2">
               <div className="space-y-1">
@@ -119,7 +119,7 @@ export default function Home() {
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Ready to innovate</h2>
             <p className="text-primary-foreground/80 md:text-lg max-w-xl mx-auto">
-              Join the IEEE Computer Society BVM Chapter today and become part of a global community.
+              Join the IEEE CS BVM SBC BVM Chapter today and become part of a community.
             </p>
             <div className="pt-4">
               <Link

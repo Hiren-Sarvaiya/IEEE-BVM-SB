@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IEEE Computer Society | Birla Vishvakarma Mahavidyalaya",
-  description: "Official website of IEEE Computer Society (CS Chapter) at BVM. Advancing computer science and technology.",
+  title: "IEEE CS BVM SBC | Birla Vishvakarma Mahavidyalaya",
+  description: "Official website of IEEE CS BVM SBC at BVM. Advancing computer science and technology.",
 };
 
 export default function RootLayout({
