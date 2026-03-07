@@ -42,10 +42,7 @@ export default function Home() {
             </motion.div>
 
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-              IEEE CS BVM SBC <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-                BVM Chapter
-              </span>
+              IEEE CS BVM SBC
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xl text-muted-foreground max-w-2xl mx-auto">

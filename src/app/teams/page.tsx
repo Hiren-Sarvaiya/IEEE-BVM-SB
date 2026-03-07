@@ -202,6 +202,8 @@ function HorizontalCommitteeSection({ teamSection, sectionIndex }: { teamSection
 }
 
 export default function Teams() {
+  const [selectedYear, setSelectedYear] = React.useState<"2026" | "2025">("2026");
+
   React.useEffect(() => {
     const initLenis = async () => {
       const { default: Lenis } = await import("lenis");
@@ -224,6 +226,8 @@ export default function Teams() {
     initLenis();
   }, []);
 
+  const filteredTeams = teams.filter(team => team.title.includes(selectedYear));
+
   return (
     <div className="py-12 md:py-24">
       <motion.div
@@ -237,10 +241,37 @@ export default function Teams() {
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
           The brilliant minds at IEEE CS BVM driving innovation and excellence.
         </p>
+
+        {/* Tab Filter */}
+        <div className="flex justify-center mt-12">
+          <div className="inline-flex items-center p-1 bg-muted rounded-2xl border border-border shadow-sm">
+            {(["2026", "2025"] as const).map((year) => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={cn(
+                  "relative px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-xl",
+                  selectedYear === year
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {selectedYear === year && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 bg-primary rounded-xl shadow-lg"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10">{year}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </motion.div>
 
       <div className="space-y-0">
-        {teams.map((teamSection, sectionIndex) => (
+        {filteredTeams.map((teamSection, sectionIndex) => (
           <HorizontalCommitteeSection
             key={teamSection.title}
             teamSection={teamSection}
