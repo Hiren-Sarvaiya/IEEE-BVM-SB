@@ -65,7 +65,7 @@ function TeamCard({ member, index }: { member: TeamMember, index: number }) {
     <div
       onClick={() => setIsActive(!isActive)}
       className={cn(
-        "group relative h-[60vh] sm:h-[70vh] aspect-[3/4] rounded-[2.5rem] overflow-hidden bg-muted cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500",
+        "group relative h-[55vh] sm:h-[70vh] aspect-3/4 rounded-[2.5rem] overflow-hidden bg-muted cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500",
         "shrink-0",
         isActive && "shadow-xl"
       )}
@@ -192,7 +192,7 @@ function HorizontalCommitteeSection({ teamSection, sectionIndex }: { teamSection
                 <TeamCard key={member.name} member={member} index={index} />
               ))}
               {/* End Spacer */}
-              <div className="shrink-0 w-4 h-10" />
+              <div className="shrink-0 w-0 sm:w-4 h-10" />
             </div>
           </div>
         </div>
@@ -232,7 +232,7 @@ export default function Teams() {
         className="text-center space-y-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 sm:mb-20"
       >
         <h1 className="text-5xl md:text-7xl font-black tracking-tight uppercase">
-          Meet the <span className="text-primary italic">Teams</span>
+          Meet the <span className="text-primary italic">Team</span>
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
           The brilliant minds at IEEE CS BVM driving innovation and excellence.
