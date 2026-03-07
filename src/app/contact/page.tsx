@@ -42,9 +42,16 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="w-full h-64 bg-muted rounded-2xl border border-border overflow-hidden relative flex items-center justify-center">
-            {/* Map Placeholder */}
-            <span className="text-muted-foreground font-medium">Interactive Map Location</span>
+          <div className="w-full h-64 bg-muted rounded-2xl border border-border overflow-hidden relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.7131435113733!2d72.9219350761019!3d22.55241597950604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e74c03b7749%3A0xab364c66fd4834c!2sBirla%20Vishvakarma%20Mahavidyalaya%20(BVM)!5e0!3m2!1sen!2sin!4v1772887979597!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </motion.div>
 
