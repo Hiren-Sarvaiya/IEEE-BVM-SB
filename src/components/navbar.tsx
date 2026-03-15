@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 
 const routes = [
-  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Teams", path: "/teams" },
   { name: "Events", path: "/events" },

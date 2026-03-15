@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronRight, Zap, Users, Code, Activity } from "lucide-react"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -25,8 +26,8 @@ export default function Home() {
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 bg-background overflow-hidden -z-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-blob" />
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[var(--color-cs)]/20 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-blob animation-delay-2000" />
-          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-[var(--color-wie)]/20 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-blob animation-delay-4000" />
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cs/20 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-wie/20 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-blob animation-delay-4000" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -41,7 +42,7 @@ export default function Home() {
               <span>Advancing Technology</span>
             </motion.div>
 
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto text-transparent bg-clip-text bg-linear-to-r from-primary to-primary/60">
               IEEE CS BVM SBC
             </motion.h1>
 
@@ -96,12 +97,68 @@ export default function Home() {
           </div>
           <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
             <Code className="w-24 h-24 text-primary/30" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay" />
+            <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent mix-blend-overlay" />
           </div>
         </motion.div>
       </section>
 
-      {/* Internal spacing adjustment since Societies section is gone */}
+      {/* Featured Events Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="flex flex-col md:flex-row justify-between items-end gap-6"
+        >
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Event Highlights</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              From intense hackathons to insightful workshops, catch a glimpse of the innovation happening at IEEE BVM Student Branch.
+            </p>
+          </div>
+          <Link
+            href="/events"
+            className="group inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+          >
+            View All Events
+            <ArrowRight size={20} />
+          </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { title: "Hackathons", img: "/images/events/hackathon.png", size: "md:col-span-1" },
+            { title: "Workshops", img: "/images/events/workshop.png", size: "md:col-span-1" },
+            { title: "Symposiums", img: "/images/events/symposium.png", size: "md:col-span-1" },
+            { title: "Networking", img: "/images/events/networking.png", size: "md:col-span-1" },
+          ].map((event, index) => (
+            <motion.div
+              key={event.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className={cn(
+                "group relative aspect-4/5 overflow-hidden rounded-2xl border border-border bg-muted",
+                event.size
+              )}
+            >
+              <img
+                src={event.img}
+                alt={event.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+              <div className="absolute bottom-0 left-0 p-6">
+                <h3 className="text-xl font-bold text-white">{event.title}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Internal spacing adjustment */}
       <div className="h-0" />
 
       {/* Call to Action */}
